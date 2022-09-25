@@ -1,34 +1,101 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![Downloads](https://img.shields.io/npm/dt/create-r3f-app.svg?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/create-r3f-app) [![Discord Shield](https://img.shields.io/discord/740090768164651008?style=flat&colorA=000000&colorB=000000&label=discord&logo=discord&logoColor=ffffff)](https://discord.gg/ZZjjNvJ)
+# :japanese_castle: React-Three-Next starter
 
-## Getting Started
+Minimalist starter, First Load JS of 85Kb. This starter will automatically pick the marked R3F components and inject them into a canvas layout so we can navigate seamlessly between the pages with some dynamic dom and canvas content without reloading or creating a new canvas every time.
 
-First, run the development server:
+### ⚫ Demo :
 
-```bash
-npm run dev
-# or
-yarn dev
+[![image](https://user-images.githubusercontent.com/15867665/127765411-68bf8f2d-f13b-42de-90db-d40b84d89e92.png)](https://react-three-next.vercel.app/)
+
+### How to use
+
+#### Installation
+
+_Tailwind is the default style. styled-components (styled) is also available._
+
+```sh
+yarn create r3f-app next my-app
+# yarn create r3f-app <next> my-app <tailwind|styled>? -ts?
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+or
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```sh
+npx create-r3f-app next my-app
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### :passport_control: Typescript
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+For typescript add the parameter `-ts` or `--typescript`:
 
-## Learn More
+```sh
+yarn create r3f-app next my-app -ts
+```
 
-To learn more about Next.js, take a look at the following resources:
+or
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+npx create-r3f-app next my-app -ts
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### :mount_fuji: Features
 
-## Deploy on Vercel
+- [x] Automatically inject r3f component in the Canvas
+- [x] Support glsl imports
+- [x] PWA Support
+- [x] Layout for Canvas and DOM
+- [x] Template for the meta data and header
+- [x] Clean code using ESlint and Prettier
+- [x] VSCode debug profiles for the server, Chrome, and Firefox
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### :bullettrain_side: Architecture
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Inform the nextjs page that the component is a Threejs component. For that, simply add the **r3f** property to the parent component.
+
+```jsx
+const Page = (props) => {
+  return (
+    <>
+      <div>Hello !</div>
+      
+    </>
+  )
+}
+// canvas components goes here
+// It will receive same props as Page component (from getStaticProps, etc.)
+Page.r3f = (props) => (
+  <>
+    <Shader />
+  </>
+)
+
+export default Page
+```
+
+### :control_knobs: Available Scripts
+
+- `yarn dev` - Next dev
+- `yarn analyze` - Generate bundle-analyzer
+- `yarn lint` - Audit code quality
+- `yarn build` - Next build
+- `yarn start` - Next start
+- `yarn export` - Export to static HTML
+
+### ⬛ Stack
+
+- [`threejs`](https://github.com/mrdoob/three.js/) &ndash; A lightweight, 3D library with a default WebGL renderer.
+- [`@react-three/fiber`](https://github.com/pmndrs/react-three-fiber) &ndash; A React renderer for Threejs on the web and react-native.
+- [`@react-three/drei` - Optional](https://github.com/pmndrs/drei) &ndash; useful helpers for react-three-fiber
+- [`@react-three/a11y` - Optional](https://github.com/pmndrs/react-three-a11y/) &ndash; Accessibility tools for React Three Fiber
+- [`r3f-perf` - Optional](https://github.com/RenaudRohlinger/r3f-perf) &ndash; Tool to easily monitor react threejs performances.
+
+### How to contribute :
+
+```bash
+git clone https://github.com/pmndrs/react-three-next
+&& cd react-three-next && yarn install
+```
+
+### Maintainers :
+
+- [`twitter 🐈‍⬛ @onirenaud`](https://twitter.com/onirenaud)
