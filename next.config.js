@@ -4,7 +4,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const withPWA = require('next-pwa')({
   dest: 'public',
-  disable: process.env.NODE_ENV === 'development',
+  register: true,
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === 'development' ? true : false,
 })
 
 const nextConfig = {
@@ -65,7 +67,7 @@ const KEYS_TO_OMIT = [
 ]
 
 module.exports = (_phase, { defaultConfig }) => {
-  const plugins = [[withPWA], [withBundleAnalyzer, {}]]
+  const plugins = [[withPWA], [withBundleAnalyzer]]
 
   const wConfig = plugins.reduce(
     (acc, [plugin, config]) => plugin({ ...acc, ...config }),
