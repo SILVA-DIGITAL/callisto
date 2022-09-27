@@ -10,6 +10,7 @@ const withPWA = require('next-pwa')({
 })
 
 const nextConfig = {
+  swcMinify: false,
   webpack(config, { isServer }) {
     // audio support
     config.module.rules.push({
@@ -67,7 +68,7 @@ const KEYS_TO_OMIT = [
 ]
 
 module.exports = (_phase, { defaultConfig }) => {
-  const plugins = [[withPWA], [withBundleAnalyzer]]
+  const plugins = [[withBundleAnalyzer]]
 
   const wConfig = plugins.reduce(
     (acc, [plugin, config]) => plugin({ ...acc, ...config }),
