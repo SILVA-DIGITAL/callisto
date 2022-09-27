@@ -1,17 +1,17 @@
 import create from 'zustand'
 import shallow from 'zustand/shallow'
 
-const useStoreImpl = create(() => {
+const appStore = create(() => {
   return {
     router: null,
     dom: null,
   }
 })
 
-const useStore = (sel) => useStoreImpl(sel, shallow)
-Object.assign(useStore, useStoreImpl)
+const useStore = (sel) => appStore(sel, shallow)
+Object.assign(useStore, appStore)
 
-const { getState, setState } = useStoreImpl
+const { getState, setState } = appStore
 
 export { getState, setState }
 export default useStore

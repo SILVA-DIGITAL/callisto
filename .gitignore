@@ -30,9 +30,14 @@ yarn-error.log*
 # vercel
 .vercel
 
+# other
+workbox
+sw.js 
+
 # next-pwa
-/public/workbox-*.js
-/public/sw.js
+public/workbox-*.js
+public/sw.js
+public/sw.js.map
 
 # prefer yarn than npm
 package-lock.json

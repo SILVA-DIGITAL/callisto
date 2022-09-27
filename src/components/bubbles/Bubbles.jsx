@@ -1,7 +1,7 @@
 import { MathUtils } from 'three'
 import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { Instance, Instances } from '@react-three/drei'
+import { Instances } from '@react-three/drei'
 import { Bubble } from '@/components/bubble'
 
 const particles = Array.from({ length: 100 }, () => ({
