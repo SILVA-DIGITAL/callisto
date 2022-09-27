@@ -2,18 +2,11 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
-const runtimeCaching = require('next-pwa/cache')
 const withPWA = require('next-pwa')({
-  dest: 'public',
-  register: false,
-  skipWaiting: false,
-  dynamicStartUrl: false,
-  runtimeCaching,
-  disable: process.env.NODE_ENV === 'development' ? true : false,
+  disable: process.env.NODE_ENV === 'development',
 })
 
 const nextConfig = {
-  swcMinify: false,
   webpack(config, { isServer }) {
     // audio support
     config.module.rules.push({
@@ -43,7 +36,6 @@ const nextConfig = {
 
     config.resolve.fallback = {
       ...config.resolve.fallback, // if you miss it, all the other options in fallback, specified
-      // by next.js will be dropped. Doesn't make much sense, but how it is
       fs: false, // the solution
     }
 
@@ -71,7 +63,7 @@ const KEYS_TO_OMIT = [
 ]
 
 module.exports = (_phase, { defaultConfig }) => {
-  const plugins = [[withPWA], [withBundleAnalyzer]]
+  const plugins = [[withBundleAnalyzer]]
 
   const wConfig = plugins.reduce(
     (acc, [plugin, config]) => plugin({ ...acc, ...config }),

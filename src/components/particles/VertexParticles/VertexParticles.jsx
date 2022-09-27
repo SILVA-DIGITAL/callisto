@@ -4,11 +4,7 @@ import { useFrame } from '@react-three/fiber'
 import { vertexShader } from '@/shaders/vertexShader'
 import { fragmentShader } from '@/shaders/fragmentShader'
 
-const Page = () => {
-  return <></>
-}
-
-const Particles = () => {
+const VertexParticles = () => {
   const planePositions = useMemo(() => {
     const planeGeometry = new THREE.PlaneGeometry(6, 6, 128, 128)
     const positions = planeGeometry.attributes.position.array
@@ -33,7 +29,7 @@ const Particles = () => {
 
   return (
     <>
-      <color attach='background' args={['#000']} />
+      <color attach='background' args={['#d5dfe6']} />
       <points rotation={[-Math.PI / 2, 0, 0]}>
         <bufferGeometry attach='geometry'>
           <bufferAttribute
@@ -54,21 +50,4 @@ const Particles = () => {
   )
 }
 
-Page.r3f = () => {
-  return (
-    <>
-      <color attach='background' args={[0xf5f3fd]} />
-      <Particles />
-    </>
-  )
-}
-
-export default Page
-
-export async function getStaticProps() {
-  return {
-    props: {
-      title: 'Particles',
-    },
-  }
-}
+export default VertexParticles

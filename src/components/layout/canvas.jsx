@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Preload, Stats, Loader } from '@react-three/drei'
+import { OrbitControls, Preload, Loader } from '@react-three/drei'
+import { Perf } from 'r3f-perf'
 import useStore from '@/stores/app'
 
 const LControl = () => {
@@ -38,13 +39,13 @@ const LCanvas = ({ children }) => {
     if (store.router !== null) {
       const pathname = store.router.pathname.substring(1)
       switch (pathname) {
-        case 'particles':
+        case 'vertex-particles':
           setCanvas((prevState) => ({
             ...prevState,
             camera: {
-              fov: 3,
+              fov: 7,
               position: [0, 0, 100],
-              near: 1,
+              near: 20,
               far: 100,
             },
           }))
@@ -70,7 +71,8 @@ const LCanvas = ({ children }) => {
         {...canvas}
         onCreated={(state) => state.events.connect(store.dom.current)}
       >
-        <Stats />
+        <LControl />
+        <Perf position={'top-right'} />
         <Preload all />
         {children}
       </Canvas>
