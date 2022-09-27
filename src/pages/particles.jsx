@@ -32,22 +32,25 @@ const Particles = () => {
   }, [])
 
   return (
-    <points rotation={[-Math.PI / 2, 0, 0]}>
-      <bufferGeometry attach='geometry'>
-        <bufferAttribute
-          attach='attributes-position'
-          array={planePositions}
-          itemSize={3}
-          count={planePositions.length / 3}
+    <>
+      <color attach='background' args={['#000']} />
+      <points rotation={[-Math.PI / 2, 0, 0]}>
+        <bufferGeometry attach='geometry'>
+          <bufferAttribute
+            attach='attributes-position'
+            array={planePositions}
+            itemSize={3}
+            count={planePositions.length / 3}
+          />
+        </bufferGeometry>
+        <shaderMaterial
+          args={[shaderArgs]}
+          transparent
+          depthTest={false}
+          depthWrite={false}
         />
-      </bufferGeometry>
-      <shaderMaterial
-        args={[shaderArgs]}
-        transparent
-        depthTest={false}
-        depthWrite={false}
-      />
-    </points>
+      </points>
+    </>
   )
 }
 
