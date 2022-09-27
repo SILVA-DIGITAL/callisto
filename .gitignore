@@ -23,21 +23,20 @@ yarn-error.log*
 # local env files
 .env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.development
+.env.test
+.env.production
 
 # vercel
 .vercel
-
-# other
-workbox
-sw.js 
 
 # next-pwa
 public/workbox-*.js
 public/sw.js
 public/sw.js.map
+workbox-*.js
+workbox-*.js.map
+sw.js 
 
 # prefer yarn than npm
 package-lock.json
