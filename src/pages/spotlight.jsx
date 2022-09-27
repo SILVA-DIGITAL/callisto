@@ -1,15 +1,12 @@
 import React, { Suspense } from 'react'
 import * as THREE from 'three'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { useFrame } from '@react-three/fiber'
 import { Html, useGLTF } from '@react-three/drei'
 import { useRef } from 'react'
-// import { ContactShadows } from '@react-three/drei'
-// import { EffectComposer, SSAO } from '@react-three/postprocessing'
-// import { Bubbles } from '@/components/bubbles'
-function Model(props) {
+
+const Model = (props) => {
   const group = useRef()
-  const { nodes } = useGLTF('/graces-draco.glb')
-  console.log('nodes', nodes)
+  const { nodes } = useGLTF('./glb/graces-draco.glb')
   useFrame(
     ({ pointer }) =>
       (group.current.rotation.y = THREE.MathUtils.lerp(
@@ -35,7 +32,7 @@ function Model(props) {
   )
 }
 
-function Lights() {
+const Lights = () => {
   const groupL = useRef()
   const groupR = useRef()
   const front = useRef()
@@ -83,9 +80,9 @@ function Lights() {
   )
 }
 
-function Zoom() {
+const Zoom = () => {
   useFrame((state) => {
-    state.camera.position.lerp({ x: 0, y: 0, z: 12 }, 0.005)
+    state.camera.position.lerp({ x: 0, y: 0, z: 12 }, 0.055)
     state.camera.lookAt(0, 0, 0)
   })
 }
@@ -117,7 +114,7 @@ export default Page
 export async function getStaticProps() {
   return {
     props: {
-      title: 'Lambo',
+      title: 'Spotlight',
     },
   }
 }
