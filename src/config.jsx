@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-const siteTitle = 'SD | Callisto - '
+const titleDefault = 'SD | Callisto - '
 const url = 'http://www.silvadigital.co.uk'
 const description = 'Full stack senior software engineer'
 const author = 'Max Silva'
@@ -16,7 +16,7 @@ const Header = ({ title = titleDefault }) => {
         <meta name='designer' content={author} />
         <meta name='publisher' content={author} />
 
-        <title>{`${siteTitle} ${title}`}</title>
+        <title>{`${titleDefault} ${title}`}</title>
         <meta name='description' content={description} />
         <meta name='keywords' content='Software Engineer, Software Developer' />
         <meta name='robots' content='index,follow' />
