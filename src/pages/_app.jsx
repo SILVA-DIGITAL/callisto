@@ -5,10 +5,11 @@ import { setState } from '@/stores/app'
 import Header from '@/config'
 import Dom from '@/components/layout/dom'
 import '@/styles/index.css'
+import LCanvas from '@/components/layout/canvas'
 
-const LCanvas = dynamic(() => import('@/components/layout/canvas'), {
-  ssr: true,
-})
+// const LCanvas = dynamic(() => import('@/components/layout/canvas'), {
+//   ssr: true,
+// })
 
 const title = { title: 'silvadigital' }
 
