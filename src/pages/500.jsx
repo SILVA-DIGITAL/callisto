@@ -1,8 +1,9 @@
-// custom pages/500.js !! Do not remove please or it will break build
+import { CustomError } from '@/components/customError/CustomError'
+
 export default function Error() {
   return (
     <>
-      <h1>500 - Something went wrong</h1>
+      <CustomError type='500' />
     </>
   )
 }
