@@ -2,11 +2,11 @@ import { ContactShadows } from '@react-three/drei'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
 import { Bubbles } from '@/components/bubbles'
 
-const Page = (props) => {
+const BubblesPage = (props) => {
   return <></>
 }
 
-Page.r3f = (props) => (
+BubblesPage.r3f = (props) => (
   <>
     <color attach='background' args={['#000']} />
     <fog attach='fog' args={['white', 60, 110]} />
@@ -31,8 +31,6 @@ Page.r3f = (props) => (
   </>
 )
 
-export default Page
-
 export async function getStaticProps() {
   return {
     props: {
@@ -40,3 +38,5 @@ export async function getStaticProps() {
     },
   }
 }
+
+export default BubblesPage
