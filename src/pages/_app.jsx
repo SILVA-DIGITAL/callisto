@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import dynamic from 'next/dynamic'
 import { setState } from '@/stores/app'
-import Header from '@/config'
+import dynamic from 'next/dynamic'
+import Head from '@/components/layout/header'
 import Dom from '@/components/layout/dom'
 import '@/styles/index.css'
 
@@ -21,7 +21,7 @@ const App = ({ Component, pageProps = title }) => {
 
   return (
     <>
-      <Header title={pageProps.title} />
+      <Head title={pageProps.title} />
       <Dom>
         <Component {...pageProps} />
       </Dom>

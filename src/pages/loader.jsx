@@ -1,4 +1,6 @@
-import { VertexParticles } from '@/components/particles/VertexParticles'
+// import dynamic from 'next/dynamic'
+// const Loader = dynamic(() => import('@/components/loader'), { ssr: false })
+import Loader from '../components/loader'
 
 const LoaderPage = () => {
   return (
@@ -14,7 +16,7 @@ LoaderPage.r3f = () => {
   return (
     <>
       <color attach='background' args={[0xf5f3fd]} />
-      <VertexParticles />
+      <Loader />
     </>
   )
 }
