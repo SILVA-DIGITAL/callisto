@@ -20,6 +20,7 @@
     "glsl-curl-noise": "^0.0.4",
     "glsl-noise": "^0.0.0",
     "gsap": "^3.6.1",
+    "leva": "^0.9.31",
     "lodash.debounce": "^4.0.8",
     "maath": "^0.4.2",
     "next": "^12.1.5",
@@ -27,9 +28,8 @@
     "next-pwa": "^5.6.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "three": "^0.128.0",
+    "three": "^0.127.0",
     "three-stdlib": "^2.17.0",
-    "three.js-fbo": "^1.6.0",
     "tiny-emitter": "^2.1.0",
     "zustand": "^4.1.1"
   },
@@ -41,13 +41,13 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-tailwind": "^0.2.1",
     "file-loader": "^6.2.0",
+    "raw-loader": "^4.0.2",
+    "url-loader": "^4.1.1",
     "glslify": "^7.1.1",
     "glslify-loader": "^2.0.0",
-    "postcss": "^8.4.14",
-    "prettier": "^2.7.1",
     "r3f-perf": "^6.5.0",
-    "raw-loader": "^4.0.2",
-    "tailwindcss": "^3.1.6",
-    "url-loader": "^4.1.1"
+    "prettier": "^2.7.1",
+    "postcss": "^8.4.14",
+    "tailwindcss": "^3.1.6"
   }
 }
