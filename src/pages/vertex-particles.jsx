@@ -1,3 +1,4 @@
+import React from 'react'
 import { VertexParticles } from '@/components/particles/VertexParticles'
 
 const VertexParticlesPage = () => {
@@ -13,7 +14,6 @@ const VertexParticlesPage = () => {
 VertexParticlesPage.r3f = () => {
   return (
     <>
-      <color attach='background' args={[0xf5f3fd]} />
       <VertexParticles />
     </>
   )
