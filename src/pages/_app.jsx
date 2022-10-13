@@ -6,7 +6,7 @@ import Head from '@/components/layout/header'
 import Dom from '@/components/layout/dom'
 import '@/styles/index.css'
 
-const LCanvas = dynamic(() => import('@/components/layout/canvas'), {
+const CanvasWrapper = dynamic(() => import('@/components/layout/canvas'), {
   ssr: true,
 })
 
@@ -19,13 +19,20 @@ const App = ({ Component, pageProps = title }) => {
     setState({ router })
   }, [router])
 
+  // function CustomLoader() {
+  //   const { progress } = useProgress()
+  //   return <span style={{ color: 'white' }}>{progress} % loaded</span>
+  // }
+
   return (
     <>
       <Head title={pageProps.title} />
       <Dom>
         <Component {...pageProps} />
       </Dom>
-      {Component?.r3f && <LCanvas>{Component.r3f(pageProps)}</LCanvas>}
+      {Component?.r3f && (
+        <CanvasWrapper>{Component.r3f(pageProps)}</CanvasWrapper>
+      )}
     </>
   )
 }
