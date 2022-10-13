@@ -61,6 +61,13 @@ const LCanvas = ({ children }) => {
             },
           }))
           break
+        default:
+          setCanvas((prevState) => ({
+            ...prevState,
+            camera: {
+              position: [0, 0, 5],
+            },
+          }))
       }
     }
   }, [store])
