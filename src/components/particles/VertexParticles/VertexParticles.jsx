@@ -29,7 +29,6 @@ const VertexParticles = () => {
 
   return (
     <>
-      <color attach='background' args={['#d5dfe6']} />
       <points rotation={[-Math.PI / 2, 0, 0]}>
         <bufferGeometry attach='geometry'>
           <bufferAttribute
