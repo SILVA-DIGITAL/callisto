@@ -1,12 +1,12 @@
-// import dynamic from 'next/dynamic'
-// const Loader = dynamic(() => import('@/components/loader'), { ssr: false })
-import Loader from '../components/loader'
+import dynamic from 'next/dynamic'
+const Loader = dynamic(() => import('@/components/loader'), { ssr: false })
+// import Loader from '../components/loader'
 
 const LoaderPage = () => {
   return (
     <>
       <div>
-        <h1>Vertex Particles</h1>
+        <h1>Loader</h1>
       </div>
     </>
   )
