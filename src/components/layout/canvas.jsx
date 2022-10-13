@@ -3,6 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Preload, Loader } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import useStore from '@/stores/app'
+import env from '@/constants/env'
 
 const LControl = () => {
   const dom = useStore((state) => state.dom)
@@ -21,6 +22,12 @@ const LControl = () => {
   }, [dom, control])
 
   return <OrbitControls ref={control} domElement={dom.current} />
+}
+
+const showPerf = () => {
+  if (process.env.NODE_ENV === env.DEVELOPMENT) {
+    return <Perf position='top-right' />
+  }
 }
 
 const LCanvas = ({ children }) => {
@@ -78,10 +85,10 @@ const LCanvas = ({ children }) => {
         {...canvas}
         onCreated={(state) => state.events.connect(store.dom.current)}
       >
-        <LControl />
-        <Perf position={'top-right'} />
-        <Preload all />
+        {showPerf()}
         {children}
+        <LControl />
+        <Preload all />
       </Canvas>
       <Loader />
     </>
