@@ -16,20 +16,15 @@
     "@react-three/drei": "^9.32.7",
     "@react-three/fiber": "^8.8.4",
     "@react-three/postprocessing": "^2.6.2",
-    "dat.gui": "^0.7.7",
-    "glsl-curl-noise": "^0.0.4",
-    "glsl-noise": "^0.0.0",
-    "gsap": "^3.6.1",
-    "lodash.debounce": "^4.0.8",
     "maath": "^0.4.2",
     "next": "^12.1.5",
     "next-compose-plugins": "^2.2.1",
     "next-pwa": "^5.6.0",
+    "r3f-stage": "^0.3.5",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "three": "^0.128.0",
     "three-stdlib": "^2.17.0",
-    "tiny-emitter": "^2.1.0",
     "zustand": "^4.1.1"
   },
   "devDependencies": {
@@ -40,13 +35,13 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-tailwind": "^0.2.1",
     "file-loader": "^6.2.0",
-    "raw-loader": "^4.0.2",
-    "url-loader": "^4.1.1",
     "glslify": "^7.1.1",
     "glslify-loader": "^2.0.0",
-    "r3f-perf": "^6.5.0",
-    "prettier": "^2.7.1",
     "postcss": "^8.4.14",
-    "tailwindcss": "^3.1.6"
+    "prettier": "^2.7.1",
+    "r3f-perf": "^6.5.0",
+    "raw-loader": "^4.0.2",
+    "tailwindcss": "^3.1.6",
+    "url-loader": "^4.1.1"
   }
 }
