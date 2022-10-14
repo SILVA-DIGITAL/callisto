@@ -20,7 +20,6 @@
     "next": "^12.1.5",
     "next-compose-plugins": "^2.2.1",
     "next-pwa": "^5.6.0",
-    "r3f-stage": "^0.3.5",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "three": "^0.144.0",
