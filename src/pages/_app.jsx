@@ -1,4 +1,5 @@
-import { useEffect } from 'react'
+import { useEffect, Suspense } from 'react'
+import { Loader } from '@react-three/drei'
 import { useRouter } from 'next/router'
 import { setState } from '@/stores/app'
 import dynamic from 'next/dynamic'
@@ -19,11 +20,6 @@ const App = ({ Component, pageProps = title }) => {
     setState({ router })
   }, [router])
 
-  // function CustomLoader() {
-  //   const { progress } = useProgress()
-  //   return <span style={{ color: 'white' }}>{progress} % loaded</span>
-  // }
-
   return (
     <>
       <Head title={pageProps.title} />
@@ -31,7 +27,9 @@ const App = ({ Component, pageProps = title }) => {
         <Component {...pageProps} />
       </Dom>
       {Component?.r3f && (
-        <CanvasWrapper>{Component.r3f(pageProps)}</CanvasWrapper>
+        <Suspense fallback={<Loader />}>
+          <CanvasWrapper>{Component.r3f(pageProps)}</CanvasWrapper>
+        </Suspense>
       )}
     </>
   )
