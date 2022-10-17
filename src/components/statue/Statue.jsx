@@ -1,15 +1,15 @@
 import { useRef } from 'react'
-import { useGLTF, Float } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
+import { useGLTF, Float } from '@react-three/drei'
 
-const Statue = ({ ...props }) => {
-  const group = useRef()
+const Statue = (props) => {
+  const ref = useRef()
   const { nodes, materials } = useGLTF('./glb/statue-draco.glb')
 
-  useFrame(() => (group.current.rotation.y += 0.002))
+  useFrame(() => (ref.current.rotation.y += 0.002))
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={ref} {...props} dispose={null}>
       <Float
         position={[0, 0, 0]}
         speed={2}
