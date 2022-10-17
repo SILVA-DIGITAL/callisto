@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef, Suspense } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Preload, Loader } from '@react-three/drei'
+import { OrbitControls, Preload } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import useStore from '@/stores/app'
 import env from '@/constants/env'
@@ -26,21 +26,13 @@ const LControl = () => {
 
 const showPerf = () => {
   if (process.env.NODE_ENV === env.DEVELOPMENT) {
-    return <Perf position='top-right' />
+    return <Perf position='top-left' />
   }
 }
 
 const LCanvas = ({ children }) => {
   const store = useStore((state) => state)
-  const [canvas, setCanvas] = useState({
-    style: {
-      position: 'absolute',
-      top: 0,
-    },
-    dpr: [1, 2],
-    gl: { antialias: true },
-    camera: { fov: 85, position: [0, 0, 100], near: 1, far: 120 },
-  })
+  const [canvas, setCanvas] = useState({})
 
   useEffect(() => {
     if (store.router !== null) {
@@ -57,21 +49,34 @@ const LCanvas = ({ children }) => {
             },
           }))
           break
-        case 'spotlight':
+        case 'bubbles':
           setCanvas((prevState) => ({
             ...prevState,
+            style: {
+              position: 'absolute',
+              top: 0,
+            },
+            dpr: [1, 2],
+            gl: { antialias: true },
+            camera: { fov: 85, position: [0, 0, 100], near: 1, far: 120 },
+          }))
+          break
+        case 'watch':
+          setCanvas((prevState) => ({
+            ...prevState,
+            dpr: [1, 2],
             camera: {
-              fov: 50,
-              position: [0, 0, 100],
-              near: 1,
-              far: 120,
+              fov: 85,
+              position: [0, 0, 5],
             },
           }))
           break
         default:
           setCanvas((prevState) => ({
             ...prevState,
+            dpr: [1, 2],
             camera: {
+              fov: 85,
               position: [0, 0, 5],
             },
           }))
@@ -90,7 +95,6 @@ const LCanvas = ({ children }) => {
         <LControl />
         <Preload all />
       </Canvas>
-      <Loader />
     </>
   )
 }
