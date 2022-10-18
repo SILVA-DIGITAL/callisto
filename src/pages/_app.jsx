@@ -24,13 +24,12 @@ const App = ({ Component, pageProps = title }) => {
     <>
       <Head title={pageProps.title} />
       <Dom>
-        <Component {...pageProps} />
-      </Dom>
-      {Component?.r3f && (
         <Suspense fallback={<Loader />}>
-          <CanvasWrapper>{Component.r3f(pageProps)}</CanvasWrapper>
+          <CanvasWrapper>
+            <Component {...pageProps} />
+          </CanvasWrapper>
         </Suspense>
-      )}
+      </Dom>
     </>
   )
 }
