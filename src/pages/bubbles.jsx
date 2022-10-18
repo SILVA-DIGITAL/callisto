@@ -23,7 +23,6 @@ const BubblesPage = () => {
 
   return (
     <>
-      <color attach='background' args={['#000']} />
       <fog attach='fog' args={['white', 60, 110]} />
       <ambientLight intensity={3.0} />
       <Bubbles particlesAmount={bubbles} speed={speed} color={color} />
