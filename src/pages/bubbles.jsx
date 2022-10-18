@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { ContactShadows } from '@react-three/drei'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
 import { Bubbles } from '@/components/bubbles'
