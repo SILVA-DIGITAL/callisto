@@ -5,7 +5,7 @@ import { setState } from '@/stores/app'
 import dynamic from 'next/dynamic'
 import Head from '@/components/layout/header'
 import Dom from '@/components/layout/dom'
-import '@/styles/index.css'
+import '@/styles/global.css'
 
 const CanvasWrapper = dynamic(() => import('@/components/layout/canvas'), {
   ssr: true,
