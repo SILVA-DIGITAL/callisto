@@ -26,7 +26,7 @@ const Watch = (props) => {
           occlude
         >
           <div className='watch-price'>
-            £10,000 <span>🥲</span>
+            £{props.price} <span>🥲</span>
           </div>
         </Html>
       </mesh>
