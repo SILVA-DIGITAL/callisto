@@ -4,8 +4,22 @@ import {
   ContactShadows,
 } from '@react-three/drei'
 import { Watch } from '@/components/watch'
+import { useControls } from 'leva'
 
-const WatchPage = (props) => {
+const WatchDOM = () => {
+  return <></>
+}
+
+const WatchR3F = () => {
+  const { scale, price } = useControls({
+    scale: {
+      value: 0.005,
+      min: 0.001,
+      max: 0.009,
+      step: 0.001,
+    },
+    price: '20,000',
+  })
   return (
     <>
       <PresentationControls
@@ -18,7 +32,8 @@ const WatchPage = (props) => {
         <Watch
           rotation={[-Math.PI / 2, 0, 0]}
           position={[0, 0.25, 0]}
-          scale={0.003}
+          scale={scale}
+          price={price}
         />
       </PresentationControls>
       <ContactShadows
@@ -33,7 +48,14 @@ const WatchPage = (props) => {
   )
 }
 
-export default WatchPage
+export default function WatchPage() {
+  return (
+    <>
+      <WatchDOM />
+      <WatchR3F />
+    </>
+  )
+}
 
 export async function getStaticProps() {
   return {
