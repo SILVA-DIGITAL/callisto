@@ -1,20 +1,21 @@
 import React from 'react'
 import { VertexParticles } from '@/components/particles/VertexParticles'
 
-const VertexParticlesPage = () => {
-  return (
-    <>
-      <div>
-        <h1>Vertex Particles</h1>
-      </div>
-    </>
-  )
+const VertexParticlesDOM = () => {
+  return <></>
 }
 
-VertexParticlesPage.r3f = () => {
+const VertexParticlesR3F = () => (
+  <>
+    <VertexParticles />
+  </>
+)
+
+export default function VertexParticlesPage() {
   return (
     <>
-      <VertexParticles />
+      <VertexParticlesDOM />
+      <VertexParticlesR3F />
     </>
   )
 }
@@ -26,5 +27,3 @@ export async function getStaticProps() {
     },
   }
 }
-
-export default VertexParticlesPage
