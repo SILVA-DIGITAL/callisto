@@ -1,3 +1,4 @@
+import React from 'react'
 import { useEffect, Suspense } from 'react'
 import { Loader } from '@react-three/drei'
 import { useRouter } from 'next/router'
@@ -8,11 +9,10 @@ import Dom from '@/components/layout/dom'
 import '@/styles/global.css'
 
 const CanvasWrapper = dynamic(() => import('@/components/layout/canvas'), {
-  ssr: true,
+  ssr: false,
 })
 
 const title = { title: 'silvadigital' }
-
 const App = ({ Component, pageProps = title }) => {
   const router = useRouter()
 
@@ -20,16 +20,26 @@ const App = ({ Component, pageProps = title }) => {
     setState({ router })
   }, [router])
 
+  const AppWrapper = ({ children }) => {
+    const newChildren = React.Children.map(children, (child, index) =>
+      index % 2 === 0 ? (
+        <Dom>{child}</Dom>
+      ) : (
+        <CanvasWrapper>{child}</CanvasWrapper>
+      )
+    )
+
+    return newChildren
+  }
+
+  const children = Component(pageProps).props.children
+
   return (
     <>
       <Head title={pageProps.title} />
-      <Dom>
-        <Suspense fallback={<Loader />}>
-          <CanvasWrapper>
-            <Component {...pageProps} />
-          </CanvasWrapper>
-        </Suspense>
-      </Dom>
+      <Suspense fallback={<Loader />}>
+        <AppWrapper>{children}</AppWrapper>
+      </Suspense>
     </>
   )
 }
