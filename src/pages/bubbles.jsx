@@ -3,7 +3,15 @@ import { EffectComposer, SSAO } from '@react-three/postprocessing'
 import { Bubbles } from '@/components/bubbles'
 import { useControls } from 'leva'
 
-const BubblesPage = () => {
+const BubblesDOM = () => (
+  <>
+    <div>
+      <h1>Vertex Particles</h1>
+    </div>
+  </>
+)
+
+const BubblesR3F = () => {
   const { bubbles, speed, color } = useControls({
     bubbles: {
       value: 31,
@@ -45,12 +53,17 @@ const BubblesPage = () => {
   )
 }
 
-export async function getStaticProps() {
-  return {
-    props: {
-      title: 'Bubbles',
-    },
-  }
+export default function BubblesPage() {
+  return (
+    <>
+      <BubblesDOM />
+      <BubblesR3F />
+    </>
+  )
 }
 
-export default BubblesPage
+export async function getStaticProps() {
+  return {
+    props: { title: 'Bubbles' },
+  }
+}
