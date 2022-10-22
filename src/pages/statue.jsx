@@ -3,7 +3,9 @@ import { Statue } from '@/components/statue'
 import { Lights } from '@/components/lights'
 import { useControls } from 'leva'
 
-const StatuePage = () => {
+const StatueDOM = () => <></>
+
+const StatueR3F = () => {
   const { speed, floatIntensity, colour, scale } = useControls({
     speed: {
       value: 2,
@@ -39,7 +41,14 @@ const StatuePage = () => {
   )
 }
 
-export default StatuePage
+export default function StatuePage() {
+  return (
+    <>
+      <StatueDOM />
+      <StatueR3F />
+    </>
+  )
+}
 
 export async function getStaticProps() {
   return {
