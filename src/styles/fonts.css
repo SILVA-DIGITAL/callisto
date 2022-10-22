@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'FiraCodeRegular';
+  src: url('../../public/fonts/FiraCode-Regular.ttf');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FiraCodeBold';
+  src: url('../../public/fonts/FiraCode-Bold.ttf');
+  font-style: normal;
+}

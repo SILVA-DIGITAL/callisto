@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'fonts.css';
 
 @layer base {
   * {
@@ -19,6 +20,7 @@
   }
 
   .watch-price {
+    font-family: FiraCodeBold;
     cursor: pointer;
     outline: none;
     border: none;
