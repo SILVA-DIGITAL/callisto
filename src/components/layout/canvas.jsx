@@ -92,7 +92,6 @@ const LCanvas = ({ children }) => {
       >
         {showPerf()}
         {children}
-        <LControl />
         <Preload all />
       </Canvas>
     </>
