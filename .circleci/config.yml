@@ -46,3 +46,18 @@ jobs:
             if [ $CIRCLE_BRANCH = 'main' ]; then
               aws s3 sync build s3://sd.callisto --delete --exact-timestamps;
             fi
+workflows:
+  'Build and deploy to AWS S3 bucket':
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - main
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
