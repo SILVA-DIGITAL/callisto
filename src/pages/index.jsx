@@ -1,16 +1,23 @@
 import { Stars } from '@/components/stars'
 
-const HomePage = (props) => {
+const HomePageDOM = () => {
   return <></>
 }
 
-HomePage.r3f = (props) => (
+const HomePageR3F = () => (
   <>
     <Stars />
   </>
 )
 
-export default HomePage
+export default function HomePage() {
+  return (
+    <>
+      <HomePageDOM />
+      <HomePageR3F />
+    </>
+  )
+}
 
 export async function getStaticProps() {
   return {
