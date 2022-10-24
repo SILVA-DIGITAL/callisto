@@ -32,7 +32,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - .
+            - ./next
   deploy:
     working_directory: ~/repo
     docker:
