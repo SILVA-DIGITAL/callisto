@@ -44,7 +44,7 @@ jobs:
           name: Deploy
           command: |
             if [ $CIRCLE_BRANCH = 'main' ]; then
-              aws s3 sync build s3://sd.callisto --delete --exact-timestamps;
+              aws s3 sync .next s3://sd.callisto --delete --exact-timestamps;
             fi
 workflows:
   'Build and deploy to AWS S3 bucket':
