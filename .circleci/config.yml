@@ -24,10 +24,10 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: Build
+          name: Export
           command: |
             if [ $CIRCLE_BRANCH = 'main' ]; then
-              yarn build
+              yarn export
             fi
       - persist_to_workspace:
           root: .
@@ -44,7 +44,7 @@ jobs:
           name: Deploy
           command: |
             if [ $CIRCLE_BRANCH = 'main' ]; then
-              aws s3 sync .next s3://sd.callisto --delete --exact-timestamps;
+              aws s3 sync out s3://sd.callisto --delete --exact-timestamps;
             fi
 workflows:
   'Build and deploy to AWS S3 bucket':
