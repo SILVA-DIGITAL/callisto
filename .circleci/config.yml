@@ -27,12 +27,12 @@ jobs:
           name: Build
           command: |
             if [ $CIRCLE_BRANCH = 'main' ]; then
-              yarn build
+              yarn export
             fi
       - persist_to_workspace:
-          root: .
+          root: ./
           paths:
-            - ./next
+            - .
   deploy:
     working_directory: ~/repo
     docker:
