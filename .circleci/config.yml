@@ -30,9 +30,9 @@ jobs:
               yarn export
             fi
       - persist_to_workspace:
-          root: ./
+          root: .
           paths:
-            - .
+            - .next
   deploy:
     working_directory: ~/repo
     docker:
