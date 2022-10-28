@@ -7,6 +7,9 @@ const withPWA = require('next-pwa')({
   disable: process.env.NODE_ENV === 'development',
 })
 
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
   webpack(config, { isServer }) {
     // audio support
