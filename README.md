@@ -1,6 +1,6 @@
 # Callisto
 
-[![CircleCI](https://circleci.com/gh/SILVA-DIGITAL/callisto.svg?style=svg&circle-token=7d48d3d0a7481323a6b7848006dde5d0421018fa)]('http://www.gooogle.com')
+[![CircleCI](https://circleci.com/gh/SILVA-DIGITAL/callisto.svg?style=shield&circle-token=7d48d3d0a7481323a6b7848006dde5d0421018fa)](http://www.gooogle.com)
 
 #### Installation
 
