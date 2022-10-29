@@ -1,12 +1,12 @@
 # Callisto
 
-[![CircleCI](https://circleci.com/github/SILVA-DIGITAL/callisto.svg?style=svg&circle-token=7d48d3d0a7481323a6b7848006dde5d0421018fa)]('http://www.gooogle.com')
+[![CircleCI](https://circleci.com/gh/SILVA-DIGITAL/callisto.svg?style=svg&circle-token=7d48d3d0a7481323a6b7848006dde5d0421018fa)]('http://www.gooogle.com')
 
 #### Installation
 
 yarn && yarn dev
 
-### :mount_fuji: Features
+### Features
 
 - [x] Automatically inject r3f component in the Canvas
 - [x] Support glsl imports
