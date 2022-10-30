@@ -2,6 +2,7 @@ import {
   PresentationControls,
   Environment,
   ContactShadows,
+  useGLTF,
 } from '@react-three/drei'
 import { Watch } from '@/components/watch'
 import { useControls } from 'leva'

@@ -2,6 +2,7 @@ import { ContactShadows } from '@react-three/drei'
 import { EffectComposer, SSAO } from '@react-three/postprocessing'
 import { Bubbles } from '@/components/bubbles'
 import { useControls } from 'leva'
+import { OrbitControlsWrapper } from '@/utilities/orbitControlsWrapper'
 
 const BubblesDOM = () => (
   <>
@@ -30,6 +31,7 @@ const BubblesR3F = () => {
 
   return (
     <>
+      <OrbitControlsWrapper />
       <fog attach='fog' args={['white', 60, 110]} />
       <ambientLight intensity={3.0} />
       <Bubbles particlesAmount={bubbles} speed={speed} color={color} />
