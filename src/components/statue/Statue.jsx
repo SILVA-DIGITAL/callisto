@@ -5,7 +5,8 @@ import { useGLTF, Float } from '@react-three/drei'
 const Statue = (props) => {
   const { speed, floatIntensity, colour, scale } = props
   const ref = useRef()
-  const { nodes, materials } = useGLTF('./glb/statue-draco.glb')
+  const statue = '../../../glb/statue-draco.glb'
+  const { nodes, materials } = useGLTF(statue)
   useFrame(() => (ref.current.rotation.y += 0.002))
 
   return (
