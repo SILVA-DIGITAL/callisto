@@ -8,6 +8,23 @@
     box-sizing: border-box;
   }
 
+  *::-webkit-scrollbar {
+    width: 1px;
+  }
+
+  *::-webkit-scrollbar-track {
+    margin-bottom: 10px;
+    margin-right: 20px;
+    border-radius: 0px;
+    background-color: rgba(127, 127, 127, 0.255);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 14px;
+    height: 12px;
+  }
+
   html,
   body,
   #__next {
