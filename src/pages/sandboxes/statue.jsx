@@ -2,6 +2,7 @@ import { Environment } from '@react-three/drei'
 import { Statue } from '@/components/statue'
 import { Lights } from '@/components/lights'
 import { useControls } from 'leva'
+import { OrbitControlsWrapper } from '@/utilities/orbitControlsWrapper'
 
 const StatueDOM = () => <></>
 
@@ -29,6 +30,7 @@ const StatueR3F = () => {
   })
   return (
     <>
+      <OrbitControlsWrapper />
       <Lights />
       <Statue
         speed={speed}
