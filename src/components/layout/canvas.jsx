@@ -1,34 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Preload } from '@react-three/drei'
-import { Perf } from 'r3f-perf'
+import { Preload } from '@react-three/drei'
 import useStore from '@/stores/app'
-import env from '@/constants/env'
-
-const LControl = () => {
-  const dom = useStore((state) => state.dom)
-  const control = useRef(null)
-
-  useEffect(() => {
-    if (control.current) {
-      const domElement = dom.current
-      const originalTouchAction = domElement.style['touch-action']
-      domElement.style['touch-action'] = 'none'
-
-      return () => {
-        domElement.style['touch-action'] = originalTouchAction
-      }
-    }
-  }, [dom, control])
-
-  return <OrbitControls ref={control} domElement={dom.current} />
-}
-
-const showPerf = () => {
-  if (process.env.NODE_ENV === env.DEVELOPMENT) {
-    return <Perf position='top-left' />
-  }
-}
+import routePathNames from '@/constants/routes'
+import showPerf from '@/utilities/showPerf'
 
 const LCanvas = ({ children }) => {
   const store = useStore((state) => state)
@@ -38,7 +13,7 @@ const LCanvas = ({ children }) => {
     if (store.router !== null) {
       const pathname = store.router.pathname.substring(1)
       switch (pathname) {
-        case 'vertex-particles':
+        case `${routePathNames.SANDBOXES}vertex-particles`:
           setCanvas((prevState) => ({
             ...prevState,
             camera: {
@@ -49,7 +24,7 @@ const LCanvas = ({ children }) => {
             },
           }))
           break
-        case 'bubbles':
+        case `${routePathNames.SANDBOXES}bubbles`:
           setCanvas((prevState) => ({
             ...prevState,
             style: {
@@ -61,7 +36,7 @@ const LCanvas = ({ children }) => {
             camera: { fov: 85, position: [0, 0, 100], near: 1, far: 120 },
           }))
           break
-        case 'watch':
+        case `${routePathNames.SANDBOXES}watch`:
           setCanvas((prevState) => ({
             ...prevState,
             dpr: [1, 2],
