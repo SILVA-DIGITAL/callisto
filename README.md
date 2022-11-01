@@ -18,7 +18,7 @@ yarn && yarn dev
 
 ```
 
-### :control_knobs: Available Scripts
+### Available Scripts
 
 - `yarn dev` - Next dev
 - `yarn analyze` - Generate bundle-analyzer
@@ -27,7 +27,7 @@ yarn && yarn dev
 - `yarn start` - Next start
 - `yarn export` - Export to static HTML
 
-### ⬛ Stack
+### Stack
 
 - [`threejs`](https://github.com/mrdoob/three.js/) &ndash; A lightweight, 3D library with a default WebGL renderer.
 - [`@react-three/fiber`](https://github.com/pmndrs/react-three-fiber) &ndash; A React renderer for Threejs on the web and react-native.
