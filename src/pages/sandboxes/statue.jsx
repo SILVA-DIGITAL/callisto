@@ -20,9 +20,7 @@ const StatueR3F = () => {
       step: 1,
     },
     scale: {
-      value: 0.7,
-      min: 0,
-      max: 1,
+      value: 0.7
       step: 0.1,
     },
     colour: '#468da6',
