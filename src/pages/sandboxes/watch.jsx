@@ -2,10 +2,10 @@ import {
   PresentationControls,
   Environment,
   ContactShadows,
-  useGLTF,
 } from '@react-three/drei'
 import { Watch } from '@/components/watch'
 import { useControls } from 'leva'
+import { OrbitControlsWrapper } from '@/utilities/orbitControlsWrapper'
 
 const WatchDOM = () => {
   return <></>
@@ -23,6 +23,7 @@ const WatchR3F = () => {
   })
   return (
     <>
+      <OrbitControlsWrapper />
       <PresentationControls
         global
         config={{ mass: 2, tension: 500 }}

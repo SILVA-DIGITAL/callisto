@@ -4,13 +4,7 @@ import { Bubbles } from '@/components/bubbles'
 import { useControls } from 'leva'
 import { OrbitControlsWrapper } from '@/utilities/orbitControlsWrapper'
 
-const BubblesDOM = () => (
-  <>
-    <div>
-      <h1>Vertex Particles</h1>
-    </div>
-  </>
-)
+const BubblesDOM = () => <></>
 
 const BubblesR3F = () => {
   const { bubbles, speed, color } = useControls({
