@@ -2,6 +2,8 @@
 
 [![CircleCI](https://circleci.com/gh/SILVA-DIGITAL/callisto.svg?style=shield&circle-token=7d48d3d0a7481323a6b7848006dde5d0421018fa)](https://app.circleci.com/pipelines/github/SILVA-DIGITAL/callisto)
 
+<img src="https://therealsujitk-vercel-badge.vercel.app/?app=callisto" />
+
 ### Stack
 
 ![NextJSv13](https://img.shields.io/badge/-Next%20v13-%23232F3E?logo=Next.JS)
@@ -24,6 +26,7 @@ yarn && yarn dev
 ```
 
 ### Available Scripts
+
 ```
 yarn dev - Next dev
 yarn analyze - Generate bundle-analyzer
