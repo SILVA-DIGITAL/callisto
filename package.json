@@ -2,6 +2,7 @@
   "name": "callisto",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "lint": "yarn prettier && yarn eslint",
     "eslint": "next lint --fix --dir src",
