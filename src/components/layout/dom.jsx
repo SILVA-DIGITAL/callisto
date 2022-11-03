@@ -15,7 +15,7 @@ const Dom = ({ children }) => {
         setClassNames(`${classNames} w-screen h-screen`)
       }
     }
-  }, [store, classNames])
+  }, [store])
 
   useEffect(() => {
     setState({ dom: ref })
