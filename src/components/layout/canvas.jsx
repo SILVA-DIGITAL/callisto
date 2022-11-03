@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { Preload } from '@react-three/drei'
 import useStore from '@/stores/app'
@@ -46,6 +46,11 @@ const LCanvas = ({ children }) => {
             },
           }))
           break
+        case `${routePathNames.SANDBOXES}video`:
+          setCanvas((prevState) => ({
+            ...prevState,
+          }))
+          break
         default:
           setCanvas((prevState) => ({
             ...prevState,
@@ -59,11 +64,14 @@ const LCanvas = ({ children }) => {
     }
   }, [store])
 
+  const myCanvas = useRef()
+  console.log('myCanvas', myCanvas)
   return (
     <>
       <Canvas
         {...canvas}
         onCreated={(state) => state.events.connect(store.dom.current)}
+        ref={myCanvas}
       >
         {showPerf()}
         {children}
