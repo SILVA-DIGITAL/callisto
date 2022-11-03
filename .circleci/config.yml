@@ -1,6 +1,4 @@
 version: 2.1
-orbs:
-  jira: circleci/jira@1.3.1
 jobs:
   lint:
     docker:
@@ -52,15 +50,11 @@ workflows:
   'Build and deploy to AWS S3 bucket':
     jobs:
       - build:
-          post-steps:
-            - jira/notify
           filters:
             branches:
               only:
                 - main
       - deploy:
-          post-steps:
-            - jira/notify
           requires:
             - build
           filters:
