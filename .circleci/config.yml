@@ -52,8 +52,6 @@ workflows:
   'Build and deploy to AWS S3 bucket':
     jobs:
       - build:
-          post-steps:
-            - jira/notify
           filters:
             branches:
               only:
