@@ -64,14 +64,12 @@ const LCanvas = ({ children }) => {
     }
   }, [store])
 
-  const myCanvas = useRef()
-  console.log('myCanvas', myCanvas)
   return (
     <>
       <Canvas
         {...canvas}
+        orphographic
         onCreated={(state) => state.events.connect(store.dom.current)}
-        ref={myCanvas}
       >
         {showPerf()}
         {children}
