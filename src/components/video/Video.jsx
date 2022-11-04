@@ -17,8 +17,8 @@ const Video = () => {
   return (
     <mesh scale={size}>
       <planeGeometry />
-      <Suspense fallback={<FallbackMaterial url='../../../10.jpg' />}>
-        <VideoMaterial url='../../../10.mp4' />
+      <Suspense fallback={<FallbackMaterial url='../../../video/10.jpg' />}>
+        <VideoMaterial url='../../../video/fireworks-on-beach.mp4' />
       </Suspense>
     </mesh>
   )
