@@ -68,7 +68,6 @@ const LCanvas = ({ children }) => {
     <>
       <Canvas
         {...canvas}
-        orphographic
         onCreated={(state) => state.events.connect(store.dom.current)}
       >
         {showPerf()}

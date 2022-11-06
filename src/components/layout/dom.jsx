@@ -15,7 +15,7 @@ const Dom = ({ children }) => {
         setClassNames(`${classNames} w-screen h-screen`)
       }
     }
-  }, [store])
+  }, [store, classNames]) // eslint-disable-line
 
   useEffect(() => {
     setState({ dom: ref })
