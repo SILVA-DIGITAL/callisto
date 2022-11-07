@@ -19,7 +19,6 @@
     "@react-three/fiber": "^8.8.4",
     "@react-three/postprocessing": "^2.6.2",
     "graphql": "^16.6.0",
-    "graphql-request": "^5.0.0",
     "leva": "^0.9.31",
     "maath": "^0.4.2",
     "next": "^13.0.0",
