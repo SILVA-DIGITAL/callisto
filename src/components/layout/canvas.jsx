@@ -70,7 +70,6 @@ const LCanvas = ({ children }) => {
         {...canvas}
         onCreated={(state) => state.events.connect(store.dom.current)}
       >
-        {showPerf()}
         {children}
         <Preload all />
       </Canvas>

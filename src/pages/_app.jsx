@@ -7,6 +7,8 @@ import dynamic from 'next/dynamic'
 import Head from '@/components/layout/header'
 import Dom from '@/components/layout/dom'
 import '@/styles/main.css'
+// import { ApolloProvider } from '@apollo/client'
+// import client from '@/lib/apollo'
 
 const CanvasWrapper = dynamic(() => import('@/components/layout/canvas'), {
   ssr: false,
