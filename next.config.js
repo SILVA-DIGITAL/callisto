@@ -8,6 +8,8 @@ const withPWA = require('next-pwa')({
 })
 
 const nextConfig = {
+  images: {},
+  reactStrictMode: true,
   webpack(config, { isServer }) {
     // audio support
     config.module.rules.push({
