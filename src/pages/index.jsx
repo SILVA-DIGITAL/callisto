@@ -6,11 +6,7 @@ const HomePageDOM = () => {
   return <></>
 }
 
-const HomePageR3F = () => (
-  <>
-    <Stars />
-  </>
-)
+const HomePageR3F = () => <></>
 
 export default function HomePage({ demos }) {
   return (
@@ -21,7 +17,7 @@ export default function HomePage({ demos }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const { data } = await client.query(demoModelsQuery)
 
   return {
