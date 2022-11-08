@@ -15,8 +15,8 @@ const HomePageR3F = () => (
 export default function HomePage({ demos }) {
   return (
     <>
+      <div className='text-center'>{demos[0].title}</div>
       <HomePageDOM />
-      <HomePageR3F />
     </>
   )
 }
