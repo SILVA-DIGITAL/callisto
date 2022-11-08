@@ -3,7 +3,6 @@ import client from '@/lib/apollo'
 import { Stars } from '@/components/stars'
 import { gql, useLazyQuery } from '@apollo/client'
 import { ApolloProvider } from '@apollo/client'
-import client from '@/lib/apollo'
 
 const HomePageDOM = () => {
   const query = gql`
