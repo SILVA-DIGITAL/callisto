@@ -7,11 +7,12 @@
     "lint": "yarn prettier && yarn eslint",
     "eslint": "next lint --fix --dir src",
     "prettier": "prettier -l \"./src/**/*.{js,jsx,md}\"",
+    "start": "next dev",
     "dev": "next dev",
     "build": "next build",
     "export": "EXPORT=true next build && EXPORT=true next export",
     "analyze": "ANALYZE=true next build",
-    "start": "next dev"
+    "clean": "rm -rf .next out && rm -rf node_modules"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",
