@@ -46,6 +46,11 @@ const LCanvas = ({ children }) => {
             },
           }))
           break
+        case `${routePathNames.SANDBOXES}stars`:
+          setCanvas((prevState) => ({
+            ...prevState,
+          }))
+          break
         case `${routePathNames.SANDBOXES}video`:
           setCanvas((prevState) => ({
             ...prevState,
