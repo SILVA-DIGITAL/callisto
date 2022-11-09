@@ -11,18 +11,8 @@ const HomePageR3F = () => <></>
 export default function HomePage({ demos }) {
   return (
     <>
-      <div className='text-center'>{demos[0].title}</div>
+      {/* <div className='text-center'>{demos[0].title}</div> */}
       <HomePageDOM />
     </>
   )
-}
-
-export async function getServerSideProps() {
-  const { data } = await client.query(demoModelsQuery)
-
-  return {
-    props: {
-      demos: data.demoModels,
-    },
-  }
 }
