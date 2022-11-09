@@ -4,18 +4,23 @@ import useStore from '@/stores/app'
 import { setState } from '@/stores/app'
 
 const Dom = ({ children }) => {
-  const [classNames, setClassNames] = useState('absolute top-0 left-0 z-10')
+  const [classNames, setClassNames] = useState(null)
   const store = useStore((state) => state)
   const ref = useRef(null)
 
   useEffect(() => {
     if (store.router !== null) {
       const pathname = store.router.pathname.substring(1)
-      if (pathname.includes(routePathNames.SANDBOXES)) {
-        setClassNames(`${classNames} w-screen h-screen`)
+
+      switch (pathname) {
+        case pathname.includes(routePathNames.SANDBOXES):
+          setClassNames(`absolute top-0 left-0 z-10' w-screen h-screen`)
+          break
+        default:
+          setClassNames()
       }
     }
-  }, [store, classNames]) // eslint-disable-line
+  }, [store])
 
   useEffect(() => {
     setState({ dom: ref })
