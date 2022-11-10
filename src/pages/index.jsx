@@ -8,7 +8,7 @@ const HomePageDOM = () => {
 
 const HomePageR3F = () => (
   <>
-    <PageLoader zoom='200' />
+    <PageLoader zoom='150' />
   </>
 )
 

@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic'
 import Head from '@/components/layout/header'
 import Dom from '@/components/layout/dom'
 import '@/styles/main.css'
+import { PageLoader } from '@/components/pageLoader'
 
 import { ApolloProvider } from '@apollo/client'
 import client from '@/lib/apollo'
@@ -28,7 +29,9 @@ const App = ({ Component, pageProps = title }) => {
       index % 2 === 0 ? (
         <Dom>{child}</Dom>
       ) : (
-        <CanvasWrapper>{child}</CanvasWrapper>
+        <CanvasWrapper>
+          <Suspense fallback={<PageLoader zoom='150' />}>{child}</Suspense>
+        </CanvasWrapper>
       )
     )
 
@@ -40,11 +43,9 @@ const App = ({ Component, pageProps = title }) => {
   return (
     <>
       <Head title={pageProps.title} />
-      <Suspense fallback={<Loader />}>
-        <ApolloProvider client={client}>
-          <AppWrapper>{children}</AppWrapper>
-        </ApolloProvider>
-      </Suspense>
+      <ApolloProvider client={client}>
+        <AppWrapper>{children}</AppWrapper>
+      </ApolloProvider>
     </>
   )
 }
