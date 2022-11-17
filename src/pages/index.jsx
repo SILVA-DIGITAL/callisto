@@ -19,7 +19,11 @@ const HomePageDOM = () => {
     })
     return transitions(
       (styles, item) =>
-        item && <animated.div style={styles}>hahqhhahah</animated.div>
+        item && (
+          <animated.div style={styles}>
+            Testing a spring animated div
+          </animated.div>
+        )
     )
   }
 
