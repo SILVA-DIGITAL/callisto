@@ -5,7 +5,7 @@ const Video = () => {
   const size = useAspect(1800, 1800)
 
   function VideoMaterial({ url }) {
-    const texture = useVideoTexture(url)
+    const texture = useVideoTexture(url, { canplaythrough: true })
     return <meshBasicMaterial map={texture} toneMapped={false} />
   }
 
