@@ -8,7 +8,7 @@ const PageLoader = ({ zoom }) => {
     <>
       <OrthographicCamera makeDefault position={[0, 0, 1]} zoom={zoom} />
       <SphereParticles />
-      <Html center>{progress} % loaded</Html>
+      {/* <Html center>{progress} % loaded</Html> */}
     </>
   )
 }
