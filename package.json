@@ -12,7 +12,8 @@
     "build": "next build",
     "export": "EXPORT=true next build && EXPORT=true next export",
     "analyze": "ANALYZE=true next build",
-    "clean": "rm -rf .next out && rm -rf node_modules"
+    "clean": "rm -rf .next out && rm -rf node_modules",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",
