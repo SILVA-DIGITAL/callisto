@@ -3,8 +3,9 @@ import client from '@/lib/apollo'
 import loaderModel from '@/hygraph/loaderModel'
 import { useTransition, animated, config } from 'react-spring'
 import { PageLoader } from '@/components/pageLoader'
+import { Background } from '@/components/background'
 
-const HomePageDOM = () => {
+const HomePageDOM = ({ title }) => {
   const [show, set] = useState(false)
 
   function Mount() {
@@ -13,16 +14,19 @@ const HomePageDOM = () => {
       enter: { opacity: 1 },
       leave: { opacity: 0 },
       reverse: show,
-      delay: 200,
+      delay: 0,
       config: config.molasses,
       onRest: () => set(!show),
     })
     return transitions(
       (styles, item) =>
         item && (
-          <animated.div style={styles}>
-            Testing a spring animated div
-          </animated.div>
+          <div className='text-center'>
+            <h1 className='px-6 py-4 text-center text-3xl'>
+              Testing content &apos;{title}&apos; feeded from Hygraph animated
+              with react-spring
+            </h1>
+          </div>
         )
     )
   }
@@ -32,18 +36,19 @@ const HomePageDOM = () => {
 
 const HomePageR3F = () => (
   <>
+    <Background />
     <PageLoader zoom='150' />
   </>
 )
 
 export default function HomePage({ pageLoaderData }) {
   const { title } = pageLoaderData
+  const domProps = { title }
 
   return (
     <>
-      {/* <div className='text-center'>{demos[0].title}</div> */}
-      <HomePageDOM />
-      <HomePageR3F />
+      <HomePageDOM {...domProps} className='z-10' />
+      <HomePageR3F className='z-20' />
     </>
   )
 }
