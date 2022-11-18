@@ -5,7 +5,7 @@ const Video = () => {
   const size = useAspect(1800, 1800)
 
   function VideoMaterial({ url }) {
-    const texture = useVideoTexture(url, { unsuspend: 'loadedmetadata' })
+    const texture = useVideoTexture(url, { unsuspend: 'loadstart' })
     return <meshBasicMaterial map={texture} toneMapped={false} />
   }
 
